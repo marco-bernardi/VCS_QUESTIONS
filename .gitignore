@@ -1,0 +1,12 @@
+# Gitignore for .tex
+
+*.aux
+*.bbl
+*.log
+*.out
+*.toc
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.pdf

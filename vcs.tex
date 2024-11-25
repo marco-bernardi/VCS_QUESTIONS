@@ -1,0 +1,127 @@
+% Init .tex document for a collections of questions of the VCS exam
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+
+\title{VCS Exam Questions}
+\author{Marco Bernardi}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This document contains a collection of questions that can be used to prepare for the VCS exam.
+\section{Machine Learning}
+\begin {enumerate}
+    \item \textbf{Describe the main components of a supervised machine learning model (e.g. linear regression), 
+    i.e. the hypothesis function, the cost function and how the learning works.}
+
+
+\end{enumerate}
+
+\section{Filters}
+\begin{enumerate}
+    % Write in bold the question 
+    \item \textbf{Please provide a clear definition for a Gaussian filter (i.e. the kernel mask) and introduce another filter that can give you a similar output.
+    You should also describe the main differences between the two.}
+
+    \item \textbf{You have this kernel:     16 * [1, 2, 1; 2, 4, 2; 1, 2, 1]
+    Define what is it and another kernel with which you can achieve a similar result.}
+
+    \item \textbf{What’s the purpose of image filtering?  You should give a clear definition of filtering and also define the mathematical tools used in order to define any filter.
+    Finally, give anexample of a smoothing filter (and provide also its definition).}
+
+    \item \textbf{Please provide i) a clear definition of the convolutional operator, ii) its main propertiesand iii) 
+    report the kernel matrix of a filter that will produce as an output an image that is shifted by 2 pixels in the left direction.}
+
+    Convolutional operator is a mathematical operation that takes two functions f and g and produces a third function that represents how the shape of one is modified by the other. 
+    The convolution of f and g is written f * g. The convolution operator is often seen in signal processing, where it models the effect of a linear time-invariant system on a signal.
+    Convolutional operator follows the classical mathematical properties of associativity, commutativity, and distributivity, homogeneity, shift invariance, and separability.
+    In image processing, the convolution operator is used to apply filters to images. 
+    The kernel matrix of a filter that will produce as an output an image that is shifted by 2 pixels in the left direction is:
+    \[
+    \begin{bmatrix}
+    0 & 0 & 0 \\
+    0 & 0 & 2 \\
+    0 & 0 & 0
+    \end{bmatrix}
+    \]
+
+    \item \textbf{What is this filter [1 0 -1; 2 0 -2; 1 0 -1]?  Please “decompose” it in its two 1D components and highlight their respective roles.}
+    
+    The following filter is a Sobel filter applied to vertical edges. The filter can be decomposed into two 1D components:
+    \[
+    \begin{bmatrix}
+    1 \\
+    2 \\
+    1
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 & 0 & -1
+    \end{bmatrix}
+    \]
+    The first component is a weighted average and scaling filter that emphasizes the vertical edges in the image.
+    It's important to use a smoothing filter to reduce the noise in the image before applying the Sobel filter, because derivatives are sensitive to noise.
+    The second component is a derivative filter that computes the gradient of the image in the vertical direction. 
+    The combination of the two filters highlights the vertical edges in the image.
+
+    Sobel filter can be used also for horizontal edges by swapping the two components of the filter.
+\end{enumerate}
+
+\section{Edge}
+
+\begin{enumerate}
+    % Write in bold the question 
+    \item \textbf{Describe an algorithm for edge detection (and define the kernel used). Report eventual similarities between this procedure and human vision.}
+    
+    \item \textbf{Please provide an example of edge detector (i.e. the kernel matrix) and illustrate whatare the main analogies with biological vision (if any), 
+    and the applications in which edgedetection could be a fundamental component.}
+
+    \item \textbf{Describe in detail the SIFT algorithm; you should present both detection and description stages, 
+    and illustrate the classical SIFT matching approach (aka Lowe’s 2NN ratio test).}
+
+    \item \textbf{Describe all the major components of the SIFT algorithm and provide some examples ofapplications in which SIFT features are the key ingredient.}
+
+    Ciao
+
+\end{enumerate}
+
+\section{BOVW}
+\begin{enumerate}
+    % Write in bold the question 
+    \item \textbf{Describe in detail a bag-of-visual-words model by highlighting all the main steps of computation and the major “design choices” /parameters.
+    Then you should briefly introducespatial pyramids and motivate their advantages with respect to a standard pipeline.}
+
+    \item \textbf{Describe in details a bag-of-visual-words pipeline. What are its main stages and what are their roles?}
+
+    Ciao
+    \item \textbf{Describe the Bag of Word pipeline. Propose a technique to address feature locality.}
+    
+    \item \textbf{Describe in details a bag-of-visual-words pipeline highlighting all the main steps of com-putation. 
+    Finally, you should briefly introduce how it can be extended in order to betterrepresent the spatial elements depicted in a given image.}
+
+\end{enumerate}
+
+\section{CNN}
+\begin{enumerate}
+    % Write in bold the question 
+    \item \textbf{Describe in detail a CNN architecture, introducing the most important components (layers, activation functions, etc.)  
+    and pros/cons with respect to a traditional neural network.}
+
+    \item \textbf{Describe the main components of a CNN (conv, pooling and FC layers). Report a typical architecture (take example from AlexNet).}
+    
+    \item \textbf{What’s a perceptron? Describe in details its main components and how a multi-layerperceptron can add more representation power w.r.t. a simple perceptron.}   
+
+\end{enumerate}
+\end{document}
